@@ -16,7 +16,15 @@
 
 var RollInfo = {
 	Create: function(data) {
-		var rollInfo = (function() {
+		rollInfo.checkData(data);
+		rollInfo.clearRefresh();
+		rollInfo.initList();
+		rollInfo.createRollInfo();
+		rollInfo.bindEvent();
+	}
+}
+
+var rollInfo = (function() {
 			var rollInfo = {
 				rollNode: $("#smoothRoll"),
 				rollList: '',
@@ -144,11 +152,4 @@ var RollInfo = {
 			};
 
 			return rollInfo;
-		})();
-		rollInfo.checkData(data);
-		rollInfo.clearRefresh();
-		rollInfo.initList();
-		rollInfo.createRollInfo();
-		rollInfo.bindEvent();
-	}
-}
+})();
